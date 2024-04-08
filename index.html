@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <style>
+      *{
+         margin: 0;
+         padding: 0;
+      }
+         
+     .container{
+        display: grid;
+        grid-template-rows: auto auto 400px;
+     }
+     .content{
+      background-color:#FFFF;
+      margin: 5px;
+      width: 95%;
+     }
+     .logo{
+        display: flex;
+        
+     }
+     .logo_container{
+        flex: 1;
+        display: inline;
+     }
+    
+     .caption_txt{
+        display: inline;
+        flex:2;
+        float: left;
+        position: relative;
+        left:-120px;
+     }
+     .top{
+        display:grid;
+       grid-template-columns: 2fr 1fr 1fr 1fr;
+        justify-content: center;
+        gap: 10px;
+        position: fixed;
+        padding: 10px 10px;
+        background-color:#ffff;
+        
+        width: 100%;
+       
+        
+     }
+     .loginbtn,.cart,.seller{
+        display: flex;
+         
+     }
+     .btn,.cart_txt,.seller_txt,.caption_txt{
+        position: relative;
+        
+     }
+     header{
+      
+     }
+     nav{
+      position: relative;
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      justify-content:space-between;
+      margin-left: 6px;
+      margin-right: 6px;
+      margin-bottom: 16px;
+      
+     }
+     .product_box{
+       width: 100px;
+       height: 100px;
+       box-sizing: border-box;
+       
+       
+     }
+     .img_container{
+       align-items: center;
+     }
+     .spl{
+      width: 130px;
+     }
+     .spl1{
+      width: 160px;
+      
+     }
+     .img{
+      height: 250px;
+      width: 100%;
+      margin-left: 5px;
+      margin-right: 0px;
+      background-image: url(images/2.webp);
+      background-size: contain;
+      
+     }
+     .product_des span{
+      position: relative;
+       top:-10px
+     }
+     .product{
+      position: relative;
+      margin-top: 20px;
+     }
+     .electric_box,.b_box,.m_box{
+      box-sizing: border-box;
+      box-shadow: 0px 0px 0px 0px white;
+      border-radius: 4px;
+      border-width: 2px;
+      height: 200px;
+       border-style: solid;
+       border-color: #e0e0e086;
+      margin-top: 8px;
+     }
+     .m_box{
+
+     }
+     .product_list{
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-bottom: 12px;
+      position: relative;
+      display: flex;
+      gap:20px
+     }
+     .product_category{
+      font-size: 20px;
+          line-height: 28px;
+      letter-spacing: -.02px;
+      font-weight: 600;
+       font-family: inter_semi_bold, fallback-inter_semi_bold, Arial, sans-serif;
+
+
+     }
+     .sub2{
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-around;
+     }
+      .b_box{
+         height: 200px;
+         width: 200px;
+         align-items: center;
+      }
+     .fly{
+        position: relative;
+        width: 350px;
+        top: -40px;
+        float: right;
+        display: inline;
+        align-items: end;
+        
+     }
+     .fly img{
+      object-fit: contain;
+     }
+     .mc_img{
+      align-items: center;
+     }
+     .products_3{
+          margin-top: 20px;
+          display: grid;
+          grid-template-columns: 2fr 4fr;
+     }
+     .top_picks,.trend_list,.festive_list,.gift_list{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-top: 8px;
+      box-shadow: 0px 0px 0px 0px white;
+      box-sizing: border-box;
+      border-radius: 2px;
+     }
+     .trend_list,.festive_list,.gift_list{
+       padding: 10px;
+     }
+     .product_4{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 20px;
+        justify-content:space-around;
+        margin-bottom: 20px;
+        margin-left: 10px;
+     }
+     .trend_box,.gift_box,.festive_box,.home_box{
+      box-sizing: border-box;
+      box-shadow: 0px 0px 0px 0px white;
+      border-radius: 4px;
+      border-width: 2px;
+      height: 200px;
+       border-style: solid;
+       border-color: #e0e0e086;
+     }
+     .gift{
+      box-shadow: 0px 0px 0px 0px white;
+      border-radius: 4px;
+      border-width: 2px;
+     }
+     .trend_img img{
+      align-self: center;
+     }
+     .trending{
+      position: relative;
+      right:5px;
+     }
+     .men{
+      box-shadow: 0px 0px 0px 0px white;
+      border-radius: 4px;
+      border-width: 2px;
+     }
+    .phone{
+      width:4fr;
+      background-image: url(images/ph.jpg);
+      background-size: cover;
+    }
+    .home_list{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+
+    }
+     footer{
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-around;
+     }
+     li{
+      list-style: none;
+     }
+     .heading{
+      color: gray;
+     }
+     .products{
+      margin-top: 15px;
+     }
+     .mc_des h4,.festive_des h4,.gift_des h4,.trend_des h4{
+        color: green;
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+       <div class="top">
+
+         <div class="logo"> 
+             <div class="logo_container">
+               <img src="images/logo1.jpg" height="50px" object fit="contain" alt="">
+            </div>
+            <div class="caption_txt"><h1>Ekart</h1></div>
+         </div> 
+          <div class="loginbtn">
+            <div class="login_img">
+                <img src="images/profile.svg" height="25px" alt="">
+            </div><div class="btn">
+            <h3>Login</h3></div>
+         </div>
+         <div class="cart">
+            <div class="cart_img">
+                <img src="images/cart.svg" height="25px" alt="">
+            </div><div class="cart_txt">
+          <h3>Cart</h3></div>
+          </div>
+          <div class="seller">
+            <div class="seller_img">
+                <img src="images/Store.svg" height="25px" alt="">
+            </div>
+            <div class="seller_txt">
+            <h3>Become a seller</h3></div>
+          </div>
+      </div>
+     
+        </header>
+        <div class="content">
+         <nav>
+            <div class="product_box">
+                <div class="img_container">
+                 <img src="images/grocery.webp" height="80px" alt="">
+                </div>
+              <div class="product_des">
+                 <span>Grocery</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/mob.webp" height="80px" alt="">
+              </div>
+              <div class="product_des">
+                 <span>Mobiles</span>
+              </div>
+            </div>
+           
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/3.png" height="80px" alt="">
+              </div>
+              <div class="product_des">
+                 <span>Fashion</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/electronic.webp" height="80px" alt="">
+              </div>
+              <div class="product_des">
+                 <span>Electronics</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/home.webp" height="80px" alt="">
+              </div>
+              <div class="product_des spl">
+                 <span>Home & Furniture</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/appliances.webp" height="80px" alt="">
+              </div>
+              <div class="product_des">
+                 <span>Appliances</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/travel.webp" height="80px" alt="">
+              </div>
+              <div class="product_des">
+                 <span>Travel</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/toy.webp" height="80px" alt="">
+              </div>
+              <div class="product_des spl1">
+                 <span>Beauty,Toys & more</span>
+              </div>
+            </div>
+            <div class="product_box">
+              <div class="img_container">
+                 <img src="images/2wheeler.webp" height="80px" alt="">
+              </div>
+              <div class="product_des spl">
+                 <span>Two Wheelers</span>
+              </div>
+            </div>
+           
+          </nav>
+          <div class="img">
+             
+          </div>
+         <div class="products">
+            <div class="product_category">
+               <h3>Best of Electronics</h3>
+            </div>
+            <div class="product_list">
+               <div class="electric_box">
+                  <div class="electronic_img">
+                     <img src="images/cam2.webp" height="150px" alt="">
+                  </div>
+                  <div class="electronic_des">
+                     <p>Top Mirrorles Cameras</p>
+                     <h5>Shop Now</h5>
+                  </div>
+               </div>
+               <div class="electric_box">
+                  <div class="electronic_img">
+                     <img src="images/projector.webp" height="150px" alt="">
+                  </div>
+                  <div class="electronic_des">
+                     <p>Projectors</p>
+                     <h5>From ₹9999</h5>
+                  </div>
+               </div>
+               <div class="electric_box">
+                  <div class="electronic_img">
+                     <img src="images/monitor.webp" height="150px" alt="">
+                  </div>
+                  <div class="electronic_des">
+                     <p>Monitors</p>
+                     <h5>From ₹999</h5>
+                  </div>
+               </div>
+               <div class="electric_box">
+                  <div class="electronic_img">
+                     <img src="images/printer.webp" height="150px" alt="">
+                  </div>
+                  <div class="electronic_des">
+                     <p>Printers</p>
+                     <h5>From ₹3999</h5>
+                  </div>
+               </div>
+               <div class="electric_box">
+                  <div class="electronic_img">
+                     <img src="images/monitor2.webp" height="150px" alt="">
+                  </div>
+                  <div class="electronic_des">
+                     <p>Monitors</p>
+                     <h5>From ₹5999</h5>
+                  </div>
+               </div>
+               <div class="fly">
+                  <img src="images/fly.webp" height="300px"  alt="">
+               </div>
+               </div>
+         </div>
+        
+            <div class="products_2">
+               <div class="product_category">
+                  <h3>Beauty,Food,Toys & more</h3>
+               </div>
+               <div class="sub2">
+               <div class="b_box">
+                  <div class="b_img">
+                    <img src="images/teddy.webp" height="150px" alt="">
+                  </div>
+                  <div class="b_des">
+                     <p>Soft Toys</p>
+                     <h4>Up to 50% off</h4>
+                  </div>
+
+                  
+               </div>
+               <div class="b_box">
+                  <div class="b_img">
+                    <img src="images/cycle.webp" height="150px" alt="">
+                  </div>
+                  <div class="b_des">
+                     <p>Non-Geared Cycles</p>
+                     <h4>Up to 60% off</h4>
+                  </div>    
+               </div>
+               <div class="b_box">
+                  <div class="b_img">
+                    <img src="images/guitar.webp" height="150px" alt="">
+                  </div>
+                  <div class="b_des">
+                     <p>String Instruments</p>
+                     <h4>Up to 70% off</h4>
+                  </div>
+               </div>
+               <div class="b_box">
+                  <div class="b_img">
+                    <img src="images/almond.webp" height="150px" alt="">
+                  </div>
+                  <div class="b_des">
+                     <p>Dry Fruits</p>
+                     <h4>Upto 70% off</h4>
+                  </div>
+
+                </div>
+               <div class="b_box">
+                  <div class="b_img">
+                    <img src="images/p.webp" height="150px" alt="">
+                  </div>
+                  <div class="b_des">
+                     <p>Gym Essentials</p>
+                     <h4>From 100</h4>
+                  </div>
+
+                   </div>
+                   <div class="b_box">
+                     <div class="b_img">
+                       <img src="images/mic.webp" height="150px" alt="">
+                     </div>
+                     <div class="b_des">
+                        <p>Microphones</p>
+                        <h4>Upto 70% off</h4>
+                     </div>
+   
+                      </div>
+                </div>
+           </div>
+           <div class="products_3">
+              <div class="men">
+                 <div class="product_category">
+                 <h4>Season's Top Picks </h4>
+                 </div>
+                 <div class="top_picks">
+                  <div class="m_box">
+                     <div class="mc_img">
+                        <img src="images/tshirt.webp" height="150px" alt="">
+                     </div>
+                     <div class="mc_des">
+                        <p>Men's T-Shirts</p>
+                        <h4>Minimum 60% off</h4>
+                     </div>
+                  </div>
+                  <div class="m_box">
+                     <div class="mc_img">
+                        <img src="images/track.webp" height="150px" alt="">
+                     </div>
+                     <div class="mc_des">
+                        <p>Men's Tracksuites</p>
+                        <h4>Special offer</h4>
+                     </div>
+                  </div>
+                  <div class="m_box">
+                     <div class="mc_img">
+                        <img src="images/track.webp" height="150px" alt="">
+                     </div>
+                     <div class="mc_des">
+                        <p>Watch Straps</p>
+                        <h4>Special Offer</h4>
+                     </div>
+                  </div>
+                  <div class="m_box">
+                     <div class="mc_img">
+                        <img src="images/shirt.webp" height="150px" alt="">
+                     </div>
+                     <div class="mc_des">
+                        <p>Men's Shirts</p>
+                        <h4>Special Offer</h4>
+                     </div>
+                  </div>
+                 </div>
+            </div>
+            <div class="phone">
+             
+            </div>
+           </div>
+           <div class="product_4">
+            <div class="gift">
+               <div class="product_category">
+                  <h4>Most Loved Gifts</h4>
+               </div>
+               <div class="gift_list">
+                  <div class="gift_box">
+                     <div class="gift_img">
+                        <img src="images/silver.webp" height="150px" alt="">
+                     </div>
+                     <div class="gift_des">
+                        <p>Bangles,Bracelets &...</p>
+                        <h4>Top Deals</h4>
+                     </div>
+                  </div>
+                  <div class="gift_box">
+                     <div class="gift_img">
+                        <img src="images/shoe.webp" height="150px" alt="">
+                     </div>
+                     <div class="gift_des">
+                        <p>Shoes</p>
+                        <h4>Top Deals</h4>
+                     </div>
+                  </div>
+                  <div class="gift_box">
+                     <div class="gift_img">
+                        <img src="images/neck.webp" height="150px" alt="">
+                     </div>
+                     <div class="gift_des">
+                        <p>Neck Band</p>
+                        <h4>Explore Now</h4>
+                     </div>
+                  </div>
+                  <div class="gift_box">
+                     <div class="gift_img">
+                        <img src="images/ch.webp" height="150px" alt="">
+                     </div>
+                     <div class="gift_des">
+                        <p>Women's Ethnic Set</p>
+                        <h4>Min 50% off</h4>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="special">
+               <div class="product_category">
+                  <h4>Festive Specials</h4>
+               </div>
+               <div class="festive">
+                  <div class="festive_list">
+                     <div class="festive_box">
+                        <div class="festive_img">
+                           <img src="images/wallet.webp" height="150px" alt="">
+                        </div>
+                        <div class="festive_des">
+                           <p>Wallets</p>
+                           <h4>Minimum 50% off</h4>
+                        </div>
+                     </div>
+                     <div class="festive_box">
+                        <div class="festive_img">
+                           <img src="images/ch.webp" height="150px" alt="">
+                        </div>
+                        <div class="festive_des">
+                           <p>Women's Ethnic Set</p>
+                           <h4>Minimum 50% off</h4>
+                        </div>
+                     </div>
+                     <div class="festive_box">
+                        <div class="festive_img">
+                           <img src="images/w2.webp" height="150px" alt="">
+                        </div>
+                        <div class="festive_des">
+                           <p>Watches</p>
+                           <h4>Minimum 50% off</h4>
+                        </div>
+                     </div>
+                     <div class="festive_box">
+                        <div class="festive_img">
+                           <img src="images/mix.webp" height="150px" alt="">
+                        </div>
+                        <div class="festive_des">
+                           <p>Mixed Dry Fruits</p>
+                           <h4>Minimum 50% off</h4>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="trending">
+               <div class="product_category">
+                  <h4>Trending Gadgets& Appliances</h4>
+               </div>
+               <div class="trend_list">
+                  <div class="trend_box">
+                     <div class="trend_img">
+                        <img src="images/game.webp" height="150px" alt="">
+
+                     </div>
+                     <div class="trend_des">
+                        <p>Gaming Laptops</p>
+                        <h4>Minimum 50% off</h4>
+                     </div>
+                  </div>
+                  <div class="trend_box">
+                     <div class="trend_img">
+                        <img src="images/n2.webp" height="150px" alt="">
+
+                     </div>
+                     <div class="trend_des">
+                        <p>Neck Band</p>
+                        <h4>Explore Now</h4>
+                     </div>
+                  </div>
+                  <div class="trend_box">
+                     <div class="trend_img">
+                        <img src="images/w3.webp" height="150px" alt="">
+
+                     </div>
+                     <div class="trend_des">
+                        <p>Smart Watches</p>
+                        <h4>Minimum 50% off</h4>
+                     </div>
+                  </div>
+                  <div class="trend_box">
+                     <div class="trend_img">
+                        <img src="images/s.webp" height="150px" alt="">
+
+                     </div>
+                     <div class="trend_des">
+                        <p>Shavers</p>
+                        <h4>Minimum 50% off</h4>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+           </div>
+           <div class="product_5">
+           <div class="product_category">
+            <h4>Home & Kitchen Essentials</h4>
+           </div>
+            <div class="home_list">
+               <div class="home_box">
+                  <div class="home_img">
+                     <img src="images/wall.webp" height="150px" alt="">
+                  </div>
+                  <div class="home_des">
+                     <p>Wall Decor Items</p>
+                     <h4>Upto 60% off</h4>
+                  </div>
+               </div>
+               <div class="home_box">
+                  <div class="home_img">
+                     <img src="images/clock.webp" height="150px" alt="">
+                  </div>
+                  <div class="home_des">
+                     <p>Clock</p>
+                     <h4>Upto 70% off</h4>
+                  </div>
+               </div>
+               <div class="home_box">
+                  <div class="home_img">
+                     <img src="images/bulb.webp" height="150px" alt="">
+                  </div>
+                  <div class="home_des">
+                     <p>Bulbs</p>
+                     <h4>Upto 70% off</h4>
+                  </div>
+               </div>
+               <div class="home_box">
+                  <div class="home_img">
+                     <img src="images/decor.webp" height="150px" alt="">
+                  </div>
+                  <div class="home_des">
+                     <p>Decor Items</p>
+                     <h4>Upto 50% off</h4>
+                  </div>
+               </div>
+               <div class="home_box">
+                  <div class="home_img">
+                     <img src="images/diya.webp" height="150px" alt="">
+                  </div>
+                  <div class="home_des">
+                     <p>Diyas</p>
+                     <h4>Upto 60% off</h4>
+                  </div>
+               </div>
+               <div class="home_box">
+                  <div class="home_img">
+                     <img src="images/light.webp" height="150px" alt="">
+                  </div>
+                  <div class="home_des">
+                     <p>Decor Lights</p>
+                     <h4>Upto 60% off</h4>
+                  </div>
+               </div>
+            </div>
+           </div>
+           
+
+        </div>
+        <footer>
+          <div>
+            <li class="heading">ABOUT</li>
+            <li>Contact Us</li>
+            <li>About Us</li>
+            <li>Carrers</li>
+            <li>Flipkart Stories</li>
+            <li>Press</li>
+            <li>Corporate Information </li>
+          </div>
+          <div>
+            <li class="heading">GROUP COMPANIES</li>
+            <li>Myntra</li>
+            <li>Flipkart</li>
+            <li>Wholesale</li>
+            <li>Cleartrip</li>
+            <li>Shopsy</li>
+          </div>
+          <div>
+            <li class="heading">HELP</li>
+            <li>Payments</li>
+            <li>Shipping</li>
+            <li>Cancellation & Returns</li>
+            <li>FAQ</li>
+            <li>Report</li>
+            <li>Infringement</li>
+          </div>
+          <div>
+            <li class="heading">CONSUMER POLICY</li>
+            <li>Cancellation & Returns</li>
+            <li>Terms of use</li>
+            <li>Security</li>
+            <li>Privacy</li>
+            <li>Sitemap</li>
+            <li>Grievance</li>
+            <li>Redressal</li>
+            <li>ERP Compliance </li>
+          </div>
+          <div>
+            <li class="heading">Mail Us:</li>
+            <li>Flipkart Private Limited</li>
+            <li>Building xxxxxx</li>
+            <li>ABC Village</li>
+            <li>India</li>
+            <div>
+               <li></li>
+               <li></li>
+               <li></li>
+            </div>
+          </div>
+          <div>
+            <li class="heading">Registered Office Address</li>
+            <li>Ekart Private Limited</li>
+            <li>Building xxxxxx</li>
+            <li>ABC Village</li>
+            <li>India</li>
+            <li>CIN:xxxx3x33xxxx</li>
+            <li>Telephone:0xxx-xxxxx</li>
+           
+          </div>
+          <div></div>
+        </footer>
+    </div>
+</body>
+</html>
